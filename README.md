@@ -1,0 +1,1 @@
+This application is built using nodeJs in which express is used as backend app. Used multer as middleware to send and receive multipart/form-data files between user and server. Using pdf-merger-js package at the server merging the pdf files sent by the user
