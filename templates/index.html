@@ -55,23 +55,27 @@
         </div>
       </nav> -->
     <div class="container my-3">
-        <h1>PdfX-Your favourite pdf merger tool</h1>
+      <h1>PdfX-Your favourite pdf merger tool</h1>
       <form method="post" action="/merge" enctype="multipart/form-data">
         <!-- The enctype attribute specifies how the form-data should be encoded when submitting it to the server. Note: The enctype attribute can be used only if method="post" . REFER THIS https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/enctype -->
         <!-- The method attribute specifies how to send form-data (the form-data is sent to the page specified in the action attribute). The form-data can be sent as URL variables (with method="get" ) or as HTTP post transaction (with method="post" ). REFER THIS https://www.geeksforgeeks.org/html-form-method-attribute/ -->
         <div class="form-group">
-          <label for="exampleFormControlFile1">Select the pdf files you want to merge(max 3)</label>
+          <label for="exampleFormControlFile1"
+            >Select the pdf files you want to merge(max 3)</label
+          >
           <input
             type="file"
             name="pdfs"
             class="form-control-file"
             id="exampleFormControlFile1"
-            multiple accept=".pdf"
+            multiple
+            accept=".pdf"
           />
           <!--on mentioning accept=".pdf" we say to application that accept only pdf files -->
           <!-- The multiple attribute is a boolean attribute. When present, it specifies that the user is allowed to enter more than one value in the <input> element. Note: The multiple attribute works with the following input types: email, and file. -->
-          <input class="btn btn-primary my-4" type="submit" value="Submit">
+          <input class="btn btn-primary my-4" type="submit" value="Submit" />
           <!-- the classes mentioned above are in such a way so that bootstrap can apply styling to it -->
+          <input class="btn btn-primary my-4" type="reset" value="Reset" />
         </div>
       </form>
     </div>
