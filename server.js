@@ -26,16 +26,16 @@ app.post("/merge", upload.array("pdfs", 3), async (req, res, next) => {
   //3 is the maximum no. of file that can be choosen
   // req.body will contain the text fields, if there were any
   // console.log(req.files)//req.files is the array of object and as many pdf files we add as many objects will be there in the array , each object will be having the information about the file
-  // const say = document.getElementById("say");//here
+  // let say = document.getElementById("say"); //here
   if (req.files.length == 0) {
     // say.innerHTML = "<h1>no files choosen</h1>"; //here
     res.sendFile(path.join(__dirname, "templates/no_file.html"));
-    // res.sendFile(path.join(__dirname, "templates/index.html"));//here
+    // res.sendFile(path.join(__dirname, "templates/index.html")); //here
   } else {
     let d = await mergePdfs(
-      path.join(__dirname, req.files[0].path),
-      path.join(__dirname, req.files[1].path)
-      // req.files
+      // path.join(__dirname, req.files[0].path),
+      // path.join(__dirname, req.files[1].path)
+      req.files
     ); //req.files[0].path is the path at which the first pdf file is uploaded
     //the last parameter in app.post is a function initially it was a normal function but at 36:00 ot was made async function to use await because mergePdfs takes some time to merge till then res.redirect should not be executed
     res.redirect(`http://localhost:3000/static/${d}.pdf`);
